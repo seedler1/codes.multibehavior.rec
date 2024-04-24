@@ -18,6 +18,7 @@ python preprocess.py --dataset sample
 
 - The modified code (which uses the publically available Retailrocket dataset)
 -- https://www.kaggle.com/datasets/retailrocket/ecommerce-dataset?resource=download&select=events.csv
+- only use Retailrocket or other datasets if you have an experimental machine, as for me trying to run the first epoch led to 1+hr of fruitless labor
 ```
 cd APANet
 cd datasets
@@ -34,7 +35,8 @@ python main.py --dataset sample
 If using Rrocket data
 
 - make sure to modify main.py code to have dataset Rrocket if wanting to run this part later
-parser.add_argument('--dataset', default='sample', help='dataset name: Rrocket/Kkbox/yoochoose/sample')
+
+- parser.add_argument('--dataset', default='sample', help='dataset name: Rrocket/Kkbox/yoochoose/sample')
 ```
 python main.py --dataset Rrocket
 ```
