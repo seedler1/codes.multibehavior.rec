@@ -8,9 +8,9 @@ from utils import Data, split_validation, seed_torch, save_results
 from model import *
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--dataset', default='sample', help='dataset name: Rrocket/Kkbox/yoochoose/sample/Rrocket_subset_start/Rrocket_subset_end')
+parser.add_argument('--dataset', default='sample', help='dataset name: Rrocket/Kkbox/yoochoose/sample/Rrocket_subset_start/Rrocket_subset_end/Rrocket_subset_random/Rrocket_subset_random_25_percent/Rrocket_subset_random_10_percent')
 parser.add_argument('--batch_size', type=int, default=64, help='input batch size')
-parser.add_argument('--hidden_size', type=int, default=100, help='hidden state size')
+parser.add_argument('--hidden_size', type=int, default=50, help='hidden state size') # default originally 100
 parser.add_argument('--epoch', type=int, default=50, help='the number of epochs to train for')
 parser.add_argument('--lr', type=float, default=0.005, help='learning rate')
 parser.add_argument('--lr_dc', type=float, default=0.1, help='learning rate decay rate')
@@ -48,7 +48,7 @@ def main():
     opt.weights = torch.FloatTensor([1 - (i / sum(count)) for i in count]) # w=(1-class_n/total_n) 
 
     # multi-task loss param (lambda)
-    lamda = {'Kkbox': 10, 'Rrocket': 1, 'yoochoose': 1, 'sample': 1, 'Rrocket_subset_start': 1, 'Rrocket_subset_end': 1}
+    lamda = {'Kkbox': 10, 'Rrocket': 1, 'yoochoose': 1, 'sample': 1, 'Rrocket_subset_start': 1, 'Rrocket_subset_end': 1, 'Rrocket_subset_random': 1, 'Rrocket_subset_random_25_percent': 1, 'Rrocket_subset_random_10_percent': 1}
     if opt.l == -1:
         opt.l = lamda[opt.dataset] 
 

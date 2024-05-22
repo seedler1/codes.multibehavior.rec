@@ -101,7 +101,7 @@ ites_seq = encode_seqs(item_tes_seq, test=True, id_dict=item_dict)
 ates_seq = encode_seqs(act_tes_seq, test=True, id_dict=act_dict)
 
 print('Total item:', item_n, 'Total action:', act_n)
-print('Traing session:', len(itra_seq), 'Testing session:', len(ites_seq))
+print('Training session:', len(itra_seq), 'Testing session:', len(ites_seq))
 
 # align item & action seq
 def align_seq(iseq, aseq):

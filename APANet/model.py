@@ -61,7 +61,7 @@ class APANet(Module):
         self.pos_embedding1 = nn.Embedding(500, self.hidden_size) # (any size > max_session_len, hidden_size)
         
         self.gnn = GNN(self.hidden_size, step=opt.step)
-        self.gru = nn.GRU(self.hidden_size, self.hidden_size, num_layers=1, batch_first=True)
+        self.gru = nn.GRU(self.hidden_size, self.hidden_size, num_layers=1, batch_first=True) # num_layers originally 1
         
         self.dropout = torch.nn.Dropout(p=0.25)
         # Parameters

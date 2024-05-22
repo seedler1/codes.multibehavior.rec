@@ -37,7 +37,7 @@ def load_df(dataset):
         train_dataset = df[:int(len(df)*0.9)].copy()
         test_dataset = df[int(len(df)*0.9):].copy()
     
-    if dataset == 'Rrocket' or dataset == 'sample' or dataset == 'Rrocket_subset_start' or dataset == 'Rrocket_subset_end': # modified bc Rrocket dataset is too huge for me to process on my machine
+    if dataset == 'Rrocket' or dataset == 'sample' or dataset == 'Rrocket_subset_start' or dataset == 'Rrocket_subset_end' or dataset == 'Rrocket_subset_random' or dataset == 'Rrocket_subset_random_25_percent' or dataset == 'Rrocket_subset_random_10_percent': # modified bc Rrocket dataset is too huge for me to process on my machine
         sess_, index_, item_, act_ = 'visitorid', 'timestamp', 'itemid', 'event'
         index_gap = 500
 
